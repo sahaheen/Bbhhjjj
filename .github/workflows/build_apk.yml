@@ -17,14 +17,14 @@ jobs:
           python-version: '3.10'
 
       - name: 🧰 Install system dependencies
-        run: |
-          sudo apt update
-          sudo apt install -y zip unzip openjdk-11-jdk python3-pip build-essential \
-            libgl1-mesa-dev libgles2-mesa-dev libffi-dev libssl-dev \
-            libpng-dev libfreetype6-dev libsqlite3-dev \
-            libmtdev-dev libgstreamer1.0-dev gstreamer1.0-plugins-good
-          pip install --upgrade pip
-          pip install cython virtualenv buildozer
+  run: |
+    sudo apt update
+    sudo apt install -y zip unzip git openjdk-11-jdk python3-pip build-essential \
+      libgl1-mesa-dev libgles2-mesa-dev libffi-dev libssl-dev \
+      libpng-dev libfreetype6-dev libsqlite3-dev \
+      libmtdev-dev libgstreamer1.0-dev gstreamer1.0-plugins-good
+    pip install --upgrade pip
+    pip install cython virtualenv buildozer
 
       - name: 📦 Install Android SDK & Build Tools
         run: |
