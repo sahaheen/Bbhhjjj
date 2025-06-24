@@ -1,0 +1,4 @@
+kivy
+pyTelegramBotAPI
+colorama
+requests
