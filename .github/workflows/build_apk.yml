@@ -26,6 +26,13 @@ jobs:
           pip install --upgrade pip
           pip install cython virtualenv buildozer
 
+      - name: 🔧 Fix deprecated config in buildozer.spec
+        run: |
+          sed -i 's/^android.arch = /#android.arch = /' buildozer.spec
+          if ! grep -q '^android.archs = ' buildozer.spec; then
+            echo "android.archs = armeabi-v7a" >> buildozer.spec
+          fi
+
       - name: 📦 Install Android SDK & Build Tools
         run: |
           mkdir -p $HOME/.buildozer/android/platform/android-sdk/cmdline-tools
